@@ -53,7 +53,7 @@ class windowBreak:
 		self.btnCopyClearText.configure(state='disabled')
 		self.txtHash.configure(state='disabled')
 		self.targetHash = self.txtHash.get()
-		self.lblClearText.configure(text="Running", fg="#0000ff")
+		self.lblClearText.configure(text="Running", fg="#00ffff")
 		self.lblClearText.grid(column=0, row=5, columnspan=3, padx=10, pady=10)
 
 		# create hashBreaker thread
