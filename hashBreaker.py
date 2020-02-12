@@ -43,7 +43,6 @@ class hashBreaker(threading.Thread):
 					# build and encode string in hashlib
 					self.m.update((self.currentString + lastChar).encode('utf-8'))
 					# run hash and check against target
-					print(self.currentString + lastChar)
 					if self.targetHash == self.m.hexdigest() :
 						# end loop
 						self.notDone = False
