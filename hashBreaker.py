@@ -24,6 +24,20 @@ class hashBreaker(threading.Thread):
 	# thread main function.
 	# starts when thread.start() is ran
 	def run(self) :
+
+		# check empty string
+		self.m = hashlib.md5()
+		self.m.update(("").encode('utf-8'))
+		if self.targetHash == self.m.hexdigest() :
+			# end loop
+			self.notDone = False
+			self.notNextLetter = False
+			self.foundHash = True
+			# save clear text
+			self.clearText = ""
+			# print to terminal
+			print(self.clearText + " : " + str(self.m.hexdigest()) )
+
 		# main loop : ends when thread is done
 		while self.notDone :
 			self.notNextLetter = True
@@ -78,6 +92,7 @@ class hashBreaker(threading.Thread):
 						self.notNextLetter = False
 						self.resettingString = False
 
+
 			# add another char for next itteration
 			self.currentIndex.insert(0, 0)
 			# update display
@@ -111,6 +126,5 @@ class hashBreaker(threading.Thread):
 		self.notDone = True
 		self.notNextLetter = True
 		self.resettingString = True
-		self.currentIndex.append(0)
 		self.currentString = ""
 		self.countLetter = len(self.currentIndex) - 1
