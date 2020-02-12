@@ -3,16 +3,16 @@ import threading
 
 #	Copyright (C) 2020 Jordon Mitchell
 #		This file is part of md5Toy.
-
+#
 #		md5Toy is free software: you can redistribute it and/or modify
 #		it under the terms of the GNU General Public License as published by
 #		the Free Software Foundation, either version 3 of the License.
-
+#
 #		md5Toy is distributed in the hope that it will be useful,
 #		but WITHOUT ANY WARRANTY; without even the implied warranty of
 #		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #		GNU General Public License for more details.
-
+#
 #		You should have received a copy of the GNU General Public License
 #		along with md5Toy.  If not, see <https://www.gnu.org/licenses/>.
 
@@ -69,7 +69,7 @@ class hashBreaker(threading.Thread):
 						break
 
 				self.resettingString = True
-				# currentIndex loop : used to increment currentIndex to build currentString for next itteration
+				# currentIndex loop : used to increment currentIndex to build currentString for next iteration
 				while self.resettingString :
 					# if more letters :
 					if self.countLetter >= 0 :
@@ -93,7 +93,7 @@ class hashBreaker(threading.Thread):
 						self.resettingString = False
 
 
-			# add another char for next itteration
+			# add another char for next iteration
 			self.currentIndex.insert(0, 0)
 			# update display
 			self.parent.breakerUpdate(len(self.currentIndex) + 1)
