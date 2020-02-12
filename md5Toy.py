@@ -3,7 +3,6 @@ from windowCreate import windowCreate
 from windowBreak import windowBreak
 import random
 import hashlib
-
                                                                                                                           
 #	                                    dddddddd                                                                              
 #	                                    d::::::d555555555555555555TTTTTTTTTTTTTTTTTTTTTTT                                     
@@ -42,18 +41,13 @@ import hashlib
 #		You should have received a copy of the GNU General Public License
 #		along with md5Toy.  If not, see <https://www.gnu.org/licenses/>.
 
-
 # Create Generator Window
 def createHashWindow():
 	hashMaker = windowCreate()
 
-
 # Create Hash Breaker Window
 def breakHashWindow():
 	hashBreaker = windowBreak()
-	return
-
-	
 
 # create md5Toy window
 md5Toy = Tk()

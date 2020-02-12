@@ -32,7 +32,6 @@ class windowBreak:
 		self.btnBreakHash.configure(text="Break md5 hash", command=self.startBreaker)
 		self.btnCopyClearText.configure(state='normal')
 		self.txtHash.configure(state='normal')
-
 		if self.hashFound :
 			self.lblClearText.configure(text=self.clearText, fg="#00ff00")
 		else :
@@ -66,17 +65,14 @@ class windowBreak:
 	def stopBreaker(self, event=None):
 		self.hashSmash.join()
 
-
 	# copy clear text to clip board
 	def copyClearText(self, event=None):
 		self.windowBreak.clipboard_clear()
 		self.windowBreak.clipboard_append(self.lblClearText.cget("text"))
 		self.windowBreak.update()
 
-
 	# constructor
 	def __init__ (self):
-
 		# create window
 		self.windowBreak = Tk()
 		self.windowBreak.title("Break Hash")
@@ -87,8 +83,7 @@ class windowBreak:
 		self.charSet = [[" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~"], ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"], ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]]
 		self.charSetCurrent = IntVar(self.windowBreak, value=0)
 		self.charSetOptions = [("Printable", 0,  0, 1), ("Alfa Numeric", 1,  1, 1), ("Alfa Full", 2, 2, 1), ("Alfa Upper", 3, 0, 2), ("Alfa Lower", 4, 1, 2), ("Numeric", 5, 2, 2)]
-	
-	
+		
 		# create menu
 		self.txtHash = Entry(self.windowBreak)
 		self.rbtn = []

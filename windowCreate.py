@@ -41,8 +41,7 @@ class windowCreate:
 		self.windowCreate.title("Create Hash")
 		self.windowCreate.configure(bg="#000000")
 		self.windowCreate.bind('<Return>', self.runHash)
-	
-	
+		
 		# create menu
 		self.txtClear = Entry(self.windowCreate)
 		self.btnGenHash = Button(self.windowCreate, text="Create md5 hash", font=("Bold", 20), fg="#00ff00", bg="#000000", command=self.runHash)
